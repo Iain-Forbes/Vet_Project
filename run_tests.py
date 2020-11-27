@@ -1,8 +1,8 @@
 import unittest
  
-from tests.owner_test import TestOwner
-from tests.vet_test import TestOwner
-from tests.animals_test import TestOwner
+from tests.owner_test import OwnerTest
+from tests.vet_test import VetTest
+from tests.animal_test import AnimalTest
 
 
  

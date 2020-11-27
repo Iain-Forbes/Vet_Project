@@ -12,7 +12,7 @@ CREATE TABLE owners (
 CREATE TABLE animals (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
-    date_of_birth VARCHAR,
+    date_of_birth DATE,
     animal_type VARCHAR,
     treatment_notes VARCHAR
 );
