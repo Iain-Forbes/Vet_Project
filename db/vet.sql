@@ -6,7 +6,6 @@ CREATE TABLE owners; (
     id SERIAL PRIMARY KEY
     name VARCHAR(225),
     contact_details VARCHAR(225),
-    animal_id SERIAL REFERENCES animal(id)
 )
 
 CREATE TABLE animals; (
@@ -16,6 +15,7 @@ CREATE TABLE animals; (
     animal_type VARCHAR(225)
     treatment_notes TEXT
     owner_id SERIAL REFERENCES owner(id),
+    vet_id SERIAL REFERENCES vet(id),
     
 )
 
@@ -23,7 +23,5 @@ CREATE TABLE vets; (
     id SERIAL PRIMARY KEY
     name VARCHAR(225),
     contact_details VARCHAR(225),
-    owner_id SERIAL REFERENCES owner(id),
-    animal_id SERIAL REFERENCES animal(id)
 )
 
