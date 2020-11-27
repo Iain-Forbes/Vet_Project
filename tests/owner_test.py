@@ -9,4 +9,4 @@ class OwnerTest(unittest.TestCase):
         self.assertEquals(self.owner1.name, "Dr House")
 
     def test_owner_has_address(self):
-        self.assertEquals(self.owner1.contact_details, "132 fake drive" )
+        self.assertEquals(self.owner1.address, "132 fake drive" )

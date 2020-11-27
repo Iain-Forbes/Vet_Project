@@ -1,18 +1,19 @@
 DROP TABLE IF EXISTS vets;
-DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS animals;
+
 
 
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
-    contact_details VARCHAR
+    address VARCHAR
 );
 
 CREATE TABLE animals (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
-    date_of_birth DATE,
+    date_of_birth DATE NOT NULL DEFAULT CURRENT_DATE,
     animal_type VARCHAR,
     treatment_notes VARCHAR
 );

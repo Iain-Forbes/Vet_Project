@@ -1,4 +1,4 @@
 class Owner:
-    def __init__(self, name, contact_details, id=None):
+    def __init__(self, name, address, id=None):
         self.name = name
-        self.contact_details = contact_details
+        self.address = address
