@@ -26,5 +26,5 @@ def select(id):
     return owner 
 
 def delete_all():
-    sql = "DELETE FROM humans"
+    sql = "DELETE FROM owners"
     run_sql(sql)
