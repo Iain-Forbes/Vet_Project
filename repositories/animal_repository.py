@@ -21,8 +21,8 @@ def select_all():
 def select(id):
     sql ="SELECT * FROM animals where id = %s"
     values = [id]
-    result = run_sql(sql, values[0])
-    owner = animal =  Animal(result["name"], result ["date_of _birth"], result ["animal_type"], result ["treatment_notes"], result["id"])
+    result = run_sql(sql, values)[0]
+    owner = animal =  Animal(result["name"], result ["date_of_birth"], result ["animal_type"], result ["treatment_notes"], result["id"])
     return animal 
 
 def delete_all():

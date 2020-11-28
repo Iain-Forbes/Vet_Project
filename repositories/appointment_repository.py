@@ -6,7 +6,7 @@ import repositories.owner_repository as owner_repository
 import repositories.animal_repository as amnimal_repository
 
 def save(new_appointment):
-    sql = "INSERT INTO appointments (appointment_time, appointment_date, owner.id, animaL_id) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO appointments (appointment_time, appointment_date, owner_id, animal_id) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [new_appointment.appointment_time, new_appointment.appointment_date, new_appointment.owner.id, new_appointment.animal.id]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -17,9 +17,9 @@ def select_all():
     sql = "SELECT * FROM appointments"
     results = run_sql(sql)
     for result in results:
-        owner = owner_repository.select(result["owner.id"])
-        animal = amnimal_repository.select(result["animal.id"])
-        appointment = Appointment(result["appointment_time"], result["appintment_date"], owner, animal, result["id"])
+        owner = owner_repository.select(result["owner_id"])
+        animal = amnimal_repository.select(result["animal_id"])
+        appointment = Appointment(result["appointment_time"], result["appointment_date"], owner, animal, result["id"])
         appointments.append(appointment)
     return appointments
 
@@ -27,8 +27,8 @@ def select_all():
         sql = "SELECT * FROM appointments WHERE id = %s"
         vaules = [id]
         results = run_sql(sql, vaules)
-        owner = owner_repository.select(result["owner.id"])
-        animal = amnimal_repository.select(result["animal.id"])
+        owner = owner_repository.select(result["owner_id"])
+        animal = amnimal_repository.select(result["animal_id"])
         appointment = Appointment(result["appointment_time"], result["appintment_date"], owner, animal, result["id"])
         return appointment
 
@@ -41,6 +41,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(appointment):
-    sql = "UPDATE appointments SET (appointment_time, appointment_date, animal.id, owner_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE appointments SET (appointment_time, appointment_date, animal_id, owner_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     vaules = [appointment.appointment_time, appointment.appointment_date, appointment.owner._id, appointment.animal_id, appointment.id]
     run_sql(sql, vaules)
