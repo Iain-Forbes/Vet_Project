@@ -14,10 +14,8 @@ CREATE TABLE animals (
     name VARCHAR,
     date_of_birth VARCHAR,
     animal_type VARCHAR,
-    treatment_notes VARCHAR,
-    owner_id SERIAL REFERENCES owners(id)
+    treatment_notes VARCHAR
 );
-
 
 CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,

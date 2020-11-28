@@ -6,7 +6,8 @@ def save(new_animal):
     sql = "INSERT INTO animals (name, date_of_birth, animal_type, treatment_notes) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [new_animal.name, new_animal.date_of_birth, new_animal.animal_type, new_animal.treatment_notes]
     results = run_sql(sql, values)
-    new_animal.id = results[0]['id']
+    id = results[0]['id']
+    new_animal.id = id
     
 
 def select_all():

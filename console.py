@@ -18,7 +18,7 @@ owner2 = Owner("Steve", "Black Mesa", 2)
 owner_repository.save(owner2)
 # owner_repository.select_all()
 
-animal1 = Animal("Joe", "2020-10-10","Goose", "Broken Goosing: Adminsiter 50cc's of goose.", 2)
+animal1 = Animal("Joe", "2020-10-10","Goose", "Broken Goosing: Adminsiter 50cc's of goose.")
 animal_repository.save(animal1)
 # animal_repository.select_all()
 
