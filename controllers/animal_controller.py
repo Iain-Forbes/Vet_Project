@@ -8,14 +8,14 @@ animals_blueprint = Blueprint('animal', __name__)
 
 # INDEX
 # GET '/animals'
-@animals_blueprint.route("/animals")
+@animals_blueprint.route("/animals", methods=['GET'])
 def animal():  
     animals = animal_repository.select_all()
     return render_template("animals/index.html", all_animals=animals)
 
 # NEW
 # GET '/animals/new'
-@animals_blueprint.route("/animals/new")
+@animals_blueprint.route("/animals/new", methods=['GET'])
 def new_animal():
     return render_template("animals/new.html")
 
@@ -30,6 +30,13 @@ def create_animal():
     new_animal = Animal(name, date_of_birth, animal_type, treatment_notes)
     animal_repository.save(new_animal)
     return redirect("/animals")
+
+# SHOW
+@animals_blueprint.route("/animals/<id>")
+def show_zombie(id):
+    animal = animal_repository.select(id)
+    return render_template("animals/show.html", animal=animal)
+
 
 
 # EDIT
