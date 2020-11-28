@@ -15,7 +15,7 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "Vet Project ",
+            "name": "Appointment Project ",
             "database": "vet",
             "username": "codeclanstudent",
             "password": "password"

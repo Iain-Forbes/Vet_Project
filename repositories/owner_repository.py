@@ -20,7 +20,7 @@ def select_all():
 
 def select(id):
     sql ="SELECT * FROM owners where id = %s"
-    vaules = [id]
+    values = [id]
     result = run_sql(sql, values[0])
     owner = Owner(result["name"], result, ["address"],result["id"])
     return owner 
@@ -35,5 +35,6 @@ def delete(id):
     run_sql(sql, vaules)
 
 def update(owner):
-    sql = "UDPATE owners SET name %s WHERE id %s"
-    vaules = [owner.name, owner.address]
+    sql = "UDPATE owners SET (name, address) = (%s, %s, %s) WHERE id %s"
+    values = [owner.name, owner.address, owner.id]
+    run_sql(sql, values)

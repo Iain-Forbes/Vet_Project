@@ -5,4 +5,5 @@ class Animal:
         self.date_of_birth = date_of_birth
         self.animal_type = animal_type
         self.treatment_notes = treatment_notes
+        self.id = id
 

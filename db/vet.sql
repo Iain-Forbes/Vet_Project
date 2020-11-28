@@ -1,6 +1,8 @@
-DROP TABLE IF EXISTS vets;
-DROP TABLE IF EXISTS owners;
-DROP TABLE IF EXISTS animals;
+DROP TABLE apointments
+DROP TABLE IF EXISTS owners CASCADE;
+DROP TABLE IF EXISTS animals CASCADE;
+DROP TABLE IF EXISTS appointments CASCADE;
+
 
 
 
@@ -18,11 +20,13 @@ CREATE TABLE animals (
     treatment_notes VARCHAR
 );
 
-CREATE TABLE vets (
+CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
-    appointment_time VARCHAR, appointment_date VARCHAR,
-    animal_id SERIAL REFERENCES animals(id),
-    owner_id SERIAL REFERENCES owners(id)
+    appointment_time VARCHAR, 
+    appointment_date VARCHAR,
+    owner_id SERIAL REFERENCES owners(id),
+    animal_id SERIAL REFERENCES animals(id)
+    
 );
 
 

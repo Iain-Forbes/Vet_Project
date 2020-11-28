@@ -1,7 +1,7 @@
 import unittest
  
 from tests.owner_test import OwnerTest
-from tests.vet_test import VetTest
+from tests.appointment_test import AppointmentTest
 from tests.animal_test import AnimalTest
 
 

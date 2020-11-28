@@ -20,7 +20,7 @@ def select_all():
 
 def select(id):
     sql ="SELECT * FROM animals where id = %s"
-    vaules = [id]
+    values = [id]
     result = run_sql(sql, values[0])
     owner = animal =  Animal(result["name"], result ["date_of _birth"], result ["animal_type"], result ["treatment_notes"], result["id"])
     return animal 
@@ -31,12 +31,12 @@ def delete_all():
 
 def delete(id):
     sql = "DELETE FROM animals WHERE id = %s"
-    vaules = [id]
-    run_sql(sql, vaules)
+    values = [id]
+    run_sql(sql, values)
 
 def update(animal):
-    sql = "UDPATE animals SET name  = %s SET date_of _birth = %s SET animal_type = %s SET  treatment plan = %s WHERE id %s"
-    vaules = [animal.name, animal.date_of_birth, animal.animal_type, animal.treatment_notes]
+    sql = "UDPATE animals SET (name, date_of _birth, animal_type, treatment plan) (%s, %s, %s, %s, %s) WHERE id = %s" 
+    values = [animal.name, animal.date_of_birth, animal.animal_type, animal.treatment_notes, animal.id]
     run_sql(sql, values)
 
 
