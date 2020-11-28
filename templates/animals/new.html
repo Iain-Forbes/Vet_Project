@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/animals" method="post">
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="title" name="name" placeholder="name" required autofocus>
+  </div>
+
+  <div>
+    <label for="date_of_birth">Date of Birth:</label>
+    <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth" required autofocus>
+  </div>
+
+  <div>
+    <label for="animal_type">Animal Type:</label>
+    <input type="text" id="animal_type" name="animal_type" placeholder="Animal Type" required>
+  </div>
+
+  <div>
+    <label for="treatment_notes">Treatment Notes:</label>
+    <input type="text" id="animal_type" name="animal_type" placeholder="Animal Type" required>
+  </div>
+
+  <button type="submit">Add Animal</button>
+
+</form>
+
+{% endblock %}

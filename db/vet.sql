@@ -1,9 +1,6 @@
-DROP TABLE apointments
 DROP TABLE IF EXISTS owners CASCADE;
 DROP TABLE IF EXISTS animals CASCADE;
 DROP TABLE IF EXISTS appointments CASCADE;
-
-
 
 
 CREATE TABLE owners (
