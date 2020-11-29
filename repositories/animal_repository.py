@@ -29,11 +29,14 @@ def select(id):
     sql ="SELECT * FROM animals where id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    animal =  Animal(
+   
+
+    if result is not None:
+        animal =  Animal(
         result["name"], 
         result ["date_of_birth"], 
         result ["animal_type"], 
-        result ["treatment_notes"], result["id"])
+        result ["treatment_notes"], result["id"]) 
     return animal 
 
 def delete_all():

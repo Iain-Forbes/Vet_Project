@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/appointments" method="post">
+
+  <form action="/appointments" method="post">
+
+    <div>
+      <label for="appointment_time">Appointment Time:</label>
+      <input type="text" id="appointment_time" name="appointment_time" placeholder="Appointment Time" required autofocus>
+    </div>
+  
+    <div>
+      <label for="appointment_date">Appointment Date:</label>
+      <input type="text" id="appointment_date" name="appointment_date" placeholder="Appointment Date" required autofocus>
+    </div>
+  
+    <form action="/appointments" method="POST">
+      <div>
+          <label for="owner">Owner:</label>
+          <select name="owner_id" id="owner">
+              {% for owner in owners %}
+              <option value="{{ owner.id }}">
+                  {{ owner.name }}
+              </option>
+              {% endfor %}
+          </select>
+      </div>
+      <div>
+          <label for="animal">Animals:</label>
+          <select name="animal_id" id="animal">
+              {% for animal in animals %}
+              <option value="{{ animal.id }}">
+                  {{ animal.name }}
+              </option>
+              {% endfor %}
+          </select>
+      </div>
+      <div>
+          <input type="submit">
+      </div>
+  </form>
+
+
+  <button type="submit"> Appointment</button>
+
+</form>
+
+{% endblock %}

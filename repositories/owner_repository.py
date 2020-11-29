@@ -24,7 +24,9 @@ def select(id):
     sql ="SELECT * FROM owners where id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    owner = Owner(
+   
+    if result is not None:
+     owner = Owner(
         result["name"], 
         result["address"], 
         result["id"])
