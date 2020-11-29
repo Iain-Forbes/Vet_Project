@@ -5,14 +5,20 @@
 {% for appointment in all_appointments %}
   
 <section>
-  <p> Appointment:{{ appointment.id }}</p>
+  <p> Appointment Date: {{ appointment.appointment_date }}
+  <BR>
+  Owner name: {{ appointment.owner.name }} 
+  <BR>
+  Animal name: {{appointment.animal.name}}</p>
   <hr>
-  <a href="/appointments/{{  appointment.id }}/edit">Edit</a>
+  <form action="/appointments/{{ appointment.id }}/edit" method="GET">
+    <input type="submit" value="Change Details">
   <form action="/appointments/{{ appointment.id }}/delete" method="POST">
       <input type="submit" value="Delete">
   </form> 
   <hr>
-  <a href="/appointments/{{ appointment.id }}">Details</a>
+  <form action="appointments/{{ appointment.id }}" method="GET">
+    <input type="submit" value="Get Details">
 </section>
 
 

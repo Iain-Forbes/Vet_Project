@@ -26,7 +26,7 @@
   <div>
     <label for="animal">Animal:</label>
     <select name="animal_id" id="animal">
-      {% for animal in animalss %}
+      {% for animal in animals %}
       <option value="{{ animal.id }}" {% if animal.id == appointment.animal.id %} selected {% endif %}>
         {{ animal.name }}
       </option>

@@ -5,12 +5,16 @@
 {% for animal in all_animals %}
   
 <section>
-  <p>{{ animal.name}}</p>
-  <a href="/animals/{{  animal.id }}/edit">Edit</a>
+  <p> Name:{{ animal.name }}</p>
+  <form action="/animals/{{ animal.id }}/edit" method="GET">
+    <input type="submit" value="Change Details">
   <form action="/animals/{{ animal.id }}/delete" method="POST">
       <input type="submit" value="Delete">
-  </form>
-  <a href="/animals/{{ animal.id }}">Details</a>
+  </form> 
+  <hr>
+  <form action="animals/{{ animal.id }}" method="GET">
+    <input type="submit" value="Get Details">
+</section>
 </section>
 {% endfor %}
 

@@ -101,3 +101,17 @@
   .nav li:hover > ul {
     display: block;
   } 
+
+section{
+  margin: auto;
+    margin-top: 60;
+    width: 500px;
+    border: 1px groove black;
+    display: grid flex;
+    position: relative;
+    text-align: center;
+    flex-flow: wrap row;
+    justify-content: center;
+    justify-items: center;
+    font-size: large;
+}

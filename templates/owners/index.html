@@ -6,13 +6,15 @@
   
 <section>
   <p> Name:{{ owner.name }}</p>
-  <hr>
-  <a href="/owners/{{  owner.id }}/edit">Edit</a>
+  <form action="/owners/{{ owner.id }}/edit" method="GET">
+    <input type="submit" value="Change Details">
   <form action="/owners/{{ owner.id }}/delete" method="POST">
       <input type="submit" value="Delete">
   </form> 
   <hr>
-  <a href="/owners/{{ owner.id }}">Details</a>
+  <form action="owners/{{ owner.id }}" method="GET">
+    <input type="submit" value="Get Details">
+</section>
 </section>
 
 
