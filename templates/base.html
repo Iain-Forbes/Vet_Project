@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Vet Control Board</title>
+  <title>Vettech Control Board</title>
 </head>
 <body>
   <header>
@@ -17,14 +17,21 @@
             <li><a href="/animals">All</a></li>
             <li><a href="/animals/new">Add</a></li>
       </ul>
+        Add Owner
+        <ul>
+            <li><a href="/owners">All</a></li>
+            <li><a href="/owners/new">Add</a></li>
+      </ul>
     </nav>
   </header>
   <div class="container">
     {% block content %}
     {% endblock %}
   </div>
-
+<div class="container">
   {%block home%}
   {% endblock %}
+</div>
+</div>
 </body>
 </html>

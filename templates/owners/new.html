@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/owners" method="post">
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="name" required autofocus>
+  </div>
+
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" placeholder="address" required autofocus>
+  </div>
+
+
+  <button type="submit"> Owner</button>
+
+</form>
+
+{% endblock %}

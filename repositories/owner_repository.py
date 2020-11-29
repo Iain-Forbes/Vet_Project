@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
-from models.owner import *
-
+from models.owner import Owner
 
 def save(new_owner):
     sql = "INSERT INTO owners (name, address) VALUES (%s, %s) RETURNING id"
@@ -14,7 +13,10 @@ def select_all():
     sql = "SELECT * FROM owners"
     results = run_sql(sql)
     for result in results:
-        owner = Owner(result["name"], result ["address"],result["id"])
+        owner = Owner(
+            result["name"], 
+            result["address"],
+            result["id"])
         owners.append(owner)
     return owners
 
@@ -22,7 +24,10 @@ def select(id):
     sql ="SELECT * FROM owners where id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    owner = Owner(result["name"], result["address"], result["id"])
+    owner = Owner(
+        result["name"], 
+        result["address"], 
+        result["id"])
     return owner 
 
 def delete_all():

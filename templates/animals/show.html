@@ -2,11 +2,11 @@
 {% block content %}
 
   <div>
-    <p>{{animal.name}}</p>
+    <p>Name: {{ animal.name }}</p>
     <hr>
-    <p>{{animal.date_of_birth}}</p>
-    <p>{{animal.animal_type}}</p>
-    <p>{{animal.treatment_notes}}</p>
+    <p>DoB:{{ animal.date_of_birth }}</p>
+    <p>Type:{{ animal.animal_type }}</p>
+    <p>Treatment Notes:{{ animal.treatment_notes }}</p>
     <p><a href="/animals/{{animal.id}}/edit">Edit</a></p>
   </div>
 

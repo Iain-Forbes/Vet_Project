@@ -12,9 +12,9 @@ owner_repository.delete_all()
 animal_repository.delete_all()
 appointment_repository.delete_all() 
 
-owner1 = Owner("Jimmy", "Cloverfeild", 1)
+owner1 = Owner("Jimmy", "Cloverfeild")
 owner_repository.save(owner1)
-owner2 = Owner("Steve", "Black Mesa", 2)
+owner2 = Owner("Steve", "Black Mesa")
 owner_repository.save(owner2)
 # owner_repository.select_all()
 
