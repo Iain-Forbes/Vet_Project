@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,56 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Vettech Control Board</title>
 </head>
+
 <body>
   <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li></ul>
-        Add Animal
-        <ul>
-            <li><a href="/animals">All</a></li>
-            <li><a href="/animals/new">Add</a></li>
-      </ul>
-        Add Owner
-        <ul>
-            <li><a href="/owners">All</a></li>
-            <li><a href="/owners/new">Add</a></li>
-      </ul>
-      Appointments
-      <ul>
-        <li><a href="/appointments">All</a></li>
-        <li><a href="/appointments/new">Add</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="active">Home</a>
+    
+  
+      <div class="dropdown">
+        <button class="dropbtn">Owners
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="dropdown1">
+          <a href="/owners">View all Owners</a>
+          <a href="/owners/new">Add New Owner</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Animals
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id ="dropdown2">
+          <a href="/animals">View All Animals</a>
+          <a href="/animals/new">Add New Animal</a>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Appointments
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id ="dropdown3">
+          <a href="/appointments">View All Animals</a>
+          <a href="/appointments/new">Add New Appointment</a>
+        </div>
+      </div>
+
+    </div>
+  
   <div class="container">
     {% block content %}
     {% endblock %}
   </div>
-<div class="container">
-  {%block home%}
-  {% endblock %}
+  <div class="container">
+    {%block home%}
+    {% endblock %}
+  </div>
+  </div>
 </div>
-</div>
+  </header>
 </body>
+
 </html>
