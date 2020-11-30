@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/appointments" method="post">
+<form action="/appointments/ {{appointment.id }}" method="POST">
 
   <div>
-    <label for="appointment_time">appointment Time:</label>
-    <input type="text" id="appointment_time" name="appointment_time" placeholder="APPOINTMENT" required autofocus>
+    <label for="appointment_time">Appointment Time:</label>
+    <input type="text" id="appointment_time" name="appointment_time" placeholder="Enter Time" required autofocus>
   </div>
 
   <div>
-    <label for="appointment_date">appointment Date:</label>
-    <input type="text" id="appointment_date" name="appointment_date" placeholder="APPOINTMENT" required autofocus>
+    <label for="appointment_date">Appointment Date:</label>
+    <input type="text" id="appointment_date" name="appointment_date" placeholder="Enter Date" required autofocus>
   </div>
 
   <div>
@@ -23,6 +23,7 @@
       {% endfor %}
     </select>
   </div>
+
   <div>
     <label for="animal">Animal:</label>
     <select name="animal_id" id="animal">
@@ -34,7 +35,7 @@
     </select>
   </div>
   <div>
-    <button type="submit">Edit Owner Details</button>
+    <button type="submit">Edit Appointment Details</button>
   </div>
 
 

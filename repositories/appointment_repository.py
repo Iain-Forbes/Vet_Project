@@ -23,7 +23,8 @@ def select_all():
         animal = animal_repository.select(result["animal_id"])
         
         appointment = Appointment(
-            result["appointment_time"], result["appointment_date"], owner, 
+            result["appointment_time"], result["appointment_date"], 
+            owner, 
             animal, 
             result["id"])
         appointments.append(appointment)

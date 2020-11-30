@@ -5,7 +5,7 @@
 {% for owner in all_owners %}
   
 <section>
-  <p> Name:{{ owner.name }}</p>
+  <p> Name:{{ owner.name }} ID: {{ owner.id }}</p>
   <form action="/owners/{{ owner.id }}/edit" method="GET">
     <input type="submit" value="Change Details">
   </form> 

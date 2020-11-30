@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS animals CASCADE;
 DROP TABLE IF EXISTS owners CASCADE;
 
 
+
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
     name VARCHAR,
@@ -14,7 +15,8 @@ CREATE TABLE animals (
     name VARCHAR,
     date_of_birth VARCHAR,
     animal_type VARCHAR,
-    treatment_notes VARCHAR
+    treatment_notes VARCHAR,
+    owner_id SERIAL REFERENCES owners(id)
 );
 
 CREATE TABLE appointments (

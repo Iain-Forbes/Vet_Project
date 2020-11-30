@@ -5,7 +5,7 @@
 {% for animal in all_animals %}
   
 <section>
-  <p> Name:{{ animal.name }}</p>
+  <p> Name:{{ animal.name }} ID: {{ animal.id }}</p>
   <form action="/animals/{{ animal.id }}/edit" method="GET">
     <input type="submit" value="Change Details">
   </form> 

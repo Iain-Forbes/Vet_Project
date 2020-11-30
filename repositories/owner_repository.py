@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
 from models.owner import Owner
+from models.appointment import Appointment
+from models.animal import Animal
 
 def save(new_owner):
     sql = "INSERT INTO owners (name, address) VALUES (%s, %s) RETURNING id"
@@ -53,9 +55,9 @@ def appointments(owner):
                 INNER JOIN animals.ON animals.id = appointments.animal_id
                 INNER JOIN owners ON appointments.id = appointments.owner_id
                 WHERE owners.id = %s"""
-    values = [user.id]
+    values = [owner.id]
     sql_results = run_sql(sql, values)
     for row in sql_results:
-        location = Location(row['name'], row['category'], row['id'])
-        results.append(location)
+        owner = Owner(row['name'], row['address'], row['id'])
+        results.append(owner)
     return results

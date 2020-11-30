@@ -17,7 +17,9 @@ def animal():
 # GET '/animals/new'
 @animals_blueprint.route("/animals/new", methods=['GET'])
 def new_animal():
-    return render_template("animals/new.html")
+    owners = owner_repository.select_all()
+    animals = animal_repository.select_all()
+    return render_template("animals/new.html", owners=owners, animals=animals)
 
 
 # CREATE
@@ -27,7 +29,8 @@ def create_animal():
     date_of_birth = request.form["date_of_birth"]
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
-    new_animal = Animal(name, date_of_birth, animal_type, treatment_notes)
+    owner  = owner_repository.select(request.form["owner_id"])
+    new_animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner)
     animal_repository.save(new_animal)
     return redirect("/animals")
 
@@ -53,7 +56,8 @@ def update_animal(id):
     date_of_birth = request.form["date_of_birth"]
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
-    new_animal = Animal(name, date_of_birth, animal_type, treatment_notes, id)
+    owner  = owner_repository.select(request.form["owner_id"])
+    new_animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner, id)
     animal_repository.update(animal)
     return redirect("/animals")
 
