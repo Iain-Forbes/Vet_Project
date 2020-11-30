@@ -5,19 +5,19 @@
 
     <div>
       <label for="appointment_time">Appointment Time:</label>
-      <input type="text" id="appointment_time" name="appointment_time" placeholder="Appointment Time" required autofocus>
+      <input type="datetime" id="appointment_time" name="appointment_time" placeholder="Appointment Time" required autofocus>
     </div>
   
     <div>
       <label for="appointment_date">Appointment Date:</label>
-      <input type="text" id="appointment_date" name="appointment_date" placeholder="Appointment Date" required autofocus>
+      <input type="date" id="appointment_date" name="appointment_date" placeholder="Appointment Date" required autofocus>
     </div>
   
     <div>
           <label for="owner">Owner:</label>
           <select name="owner_id" id="owner">
               {% for owner in owners %}
-              <option value="{{ owner.id }}">
+              <option value="{{ owner.id }}" {% if owner.id == owner.id %} selected {% endif %}>
                   {{ owner.name }}
               </option>
               {% endfor %}
@@ -28,9 +28,11 @@
           <label for="animal">Animals:</label>
           <select name="animal_id" id="animal">
               {% for animal in animals %}
-              <option value="{{ animal.id }}">
-                  {{ animal.name }}
-              </option>
+              <option value="{{ animal.id }}" {% if animal.id == animal.owner.id %}
+               selected {% endif %}>
+               {{ animal.name }}   
+            </option>
+             
               {% endfor %}
           </select>
       </div>

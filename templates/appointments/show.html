@@ -5,9 +5,8 @@
     <p>Appointment Time: {{ appointment.appointment_time }}</p>
     <hr>
     <p>Appointment Date: {{ appointment.appointment_date }}</p>   
-    <p>Owner: {{ appointment.owner.name }}</p>
-    <p>Animals: {{ appointment.animal.name }}</p>
-    <p></p>
+    <p>Owner: <a href="{{ '/owners/%s'%appointment.owner.id|urlencode }}">{{ appointment.owner.name }}</a></p>
+    <p>Animal: <a href="{{ '/animals/%s'%appointment.animal.id|urlencode }}">{{ appointment.animal.name }}</a></p>
 
     <p><a href="/appointments/{{ appointment.id }}/edit">Edit</a></p>
   </div>

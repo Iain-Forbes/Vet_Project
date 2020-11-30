@@ -37,8 +37,9 @@ def create_animal():
 # SHOW
 @animals_blueprint.route("/animals/<id>")
 def show_animal(id):
+    owned_animals = animal_repository.display_animals_owned(id)
     animal = animal_repository.select(id)
-    return render_template("animals/show.html", animal=animal)
+    return render_template("animals/show.html", animal=animal, owner=owned_animals)
 
 
 

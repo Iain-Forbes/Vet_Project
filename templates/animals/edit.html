@@ -28,7 +28,7 @@
     <label for="owner">Owner:</label>
     <select name="owner_id" id="owner">
       {% for owner in owners %}
-      <option value="{{ owner.id }}" {% if owner.id == animal.owner.id %} selected {% endif %}>
+      <option value="{{ owner.id }}" {% if owner.id == animal.owner.id %} selected {% endif %}></option>
         {{ owner.name }}
       </option>
       {% endfor %}
