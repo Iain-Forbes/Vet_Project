@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
+  <br>
+  All Registered Animals 
+  <hr>
+  
   <div>
     <p>Name: {{ animal.name }}</p>
     <hr>
@@ -12,7 +16,7 @@
     Owner: <a href="{{ '/owners/%s'%owner.owner.id|urlencode }}">{{ owner.owner.name }}</a>
     {% endfor %}
     
-    <!-- <p>Animal Owner: TODO -->
+
     <p><a href="/animals/{{animal.id}}/edit">Edit</a></p>
   </div>
 </section>

@@ -35,15 +35,14 @@ def show_owners(id):
     animals = animal_repository.select(id)
     owner = owner_repository.select(id)
     owned_animals = animal_repository.display_animals_owned(id)
-    return render_template("owners/show.html", owner=owner, owned_animals=owned_animals, animals=animals
-    )
+    return render_template("owners/show.html", owner=owner, owned_animals=owned_animals, animals=animals)
 
 
 #Edit Owners
 @owners_blueprint.route("/owners/<id>/edit")
 def edit_owner(id):
     owner = owner_repository.select(id)
-    return render_template("owners/edit.html", owner=owner)
+    return render_template("owners/edit.html", owner=owner, )
 
 #Update Owners
 @owners_blueprint.route("/owners/<id>", methods=["POST"])

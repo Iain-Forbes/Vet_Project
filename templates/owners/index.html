@@ -1,25 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-
+<section>
+<br>
+All Registered Owners
+<hr> 
 
 {% for owner in all_owners %}
   
 <section>
-  <p> Name:{{ owner.name }} ID: {{ owner.id }}</p>
+  <p> Name:{{ owner.name }} <BR>
+  ID: {{ owner.id }}</p>
   <form action="/owners/{{ owner.id }}/edit" method="GET">
     <input type="submit" value="Change Details">
+  </form>
+  <form action="owners/{{ owner.id }}" method="GET">
+    <input type="submit" value="Get Details">
+   
   </form> 
   <form action="/owners/{{ owner.id }}/delete" method="POST">
       <input type="submit" value="Delete">
   </form> 
   <hr>
-  <form action="owners/{{ owner.id }}" method="GET">
-    <input type="submit" value="Get Details">
-  </form> 
-</section>
-</section>
 
 
 {% endfor %}
+</section>
 
 {% endblock %}

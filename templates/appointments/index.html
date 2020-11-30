@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+<section>
+<br>
+Upcoming Appointments
+<hr> 
 
 {% for appointment in all_appointments %}
   
-<section>
+
   <p> Appointment Date: {{ appointment.appointment_date }}
   <BR>
   Owner name: {{ appointment.owner.name }} 
@@ -14,19 +17,17 @@
   <form action="appointments/{{ appointment.id }}" method="GET">
     <input type="submit" value="Get Details">
   </form>
-  <br>
   <form action="/appointments/{{ appointment.id }}/edit" method="GET">
     <input type="submit" value="Change Details">
-  </form>
-  <hr>
-  <br>
+  
+</form>
   <form action="/appointments/{{ appointment.id }}/delete" method="POST">
     <input type="submit" value="Delete">
   </form> 
- 
-</section>
+  <hr>
+
 
 
 {% endfor %}
-
+</section>
 {% endblock %}

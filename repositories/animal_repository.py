@@ -82,7 +82,7 @@ def display_animals_owned(id):
         result ["animal_type"], 
         result ["treatment_notes"], 
         owner,
-        result["id"])
+        result ["id"])
         owned_animals.append(animals)
     return owned_animals
         

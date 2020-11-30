@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
+  <br>
+  Enter New Animal Details Below
+  <hr>
 <form action="/animals" method="post">
 
   <div>
@@ -26,14 +29,16 @@
 
   <div>
     <label for="owner">Owner:</label>
-      <select name="owner_id" id="owner">
-        {% for owner in owners %}
-            <option value="{{ owner.id }}">
-            {{ owner.name }}
-            </option>
-        {% endfor %}
-      </select>
-  </div>  
+    <select name="owner_id" id="owner">
+      {% for owner in owners %}
+      <option value="{{ owner.id }}" >
+        {{ owner.name }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+
 
   <button type="submit">Add Animal</button>
 

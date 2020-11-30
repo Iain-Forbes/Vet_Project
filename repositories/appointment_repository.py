@@ -39,7 +39,9 @@ def select(id):
         
     if result is not None:
         appointment = Appointment(
-        result["appointment_time"], result["appointment_date"], owner, 
+        result["appointment_time"], 
+        result["appointment_date"], 
+        owner, 
         animal, 
         result["id"]) 
     return appointment
@@ -57,7 +59,7 @@ def update(appointment):
     vaules = [appointment.appointment_time, appointment.appointment_date, appointment.owner.id, appointment.animal.id, appointment.id]
     run_sql(sql, vaules)
 
-def all_appointments(id):
+def all_appointments(id):  
     owner_appointment = []
     sql = "SELECT owners.* FROM owners INNER JOIN appointments ON appointments.owner_id = owners.id WHERE appointments.owner_id = %s"
     values = [id]

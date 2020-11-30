@@ -1,23 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-
-
+<section>
+<br>
+All Registered Animals
+<hr> 
 {% for animal in all_animals %}
   
-<section>
-  <p> Name:{{ animal.name }} ID: {{ animal.id }}</p>
+
+  <p> Name:  {{ animal.name }} <br> 
+  ID: {{ animal.id }}</p>
   <form action="/animals/{{ animal.id }}/edit" method="GET">
     <input type="submit" value="Change Details">
+  </form> 
+  <form action="animals/{{ animal.id }}" method="GET">
+    <input type="submit" value="Get Details"> 
   </form> 
   <form action="/animals/{{ animal.id }}/delete" method="POST">
       <input type="submit" value="Delete">
   </form> 
   <hr>
-  <form action="animals/{{ animal.id }}" method="GET">
-    <input type="submit" value="Get Details">
-  </form> 
+  
 
-</section>
+
 {% endfor %}
+</section>
 
 {% endblock %}

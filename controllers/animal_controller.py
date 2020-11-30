@@ -29,7 +29,7 @@ def create_animal():
     date_of_birth = request.form["date_of_birth"]
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
-    owner  = owner_repository.select(request.form["owner_id"])
+    owner = owner_repository.select(request.form["owner_id"])
     new_animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner)
     animal_repository.save(new_animal)
     return redirect("/animals")
@@ -46,8 +46,8 @@ def show_animal(id):
 # EDIT
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):
-    animal = animal_repository.select(id)
-    return render_template('animals/edit.html', animal=animal)
+    animals = animal_repository.select(id)
+    return render_template('animals/edit.html')
 
 
 # UPDATE
