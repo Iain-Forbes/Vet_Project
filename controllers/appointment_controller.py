@@ -26,8 +26,9 @@ def new_appointment():
 
 @appointments_blueprint.route("/appointments/<id>")
 def show_appointments(id):
+    owner_appointment = appointment_repository.all_appointments(id)
     appointment = appointment_repository.select(id)
-    return render_template("appointments/show.html", appointment=appointment)
+    return render_template("appointments/show.html", appointment=appointment, owner_appointment=owner_appointment)
 
 @appointments_blueprint.route("/appointments", methods=["POST"])
 def create_appointment():

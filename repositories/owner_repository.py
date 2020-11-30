@@ -45,3 +45,17 @@ def update(owner):
     sql = "UDPATE owners SET (name, address) = (%s, %s, %s) WHERE id %s"
     values = [owner.name, owner.address, owner.id]
     run_sql(sql, values)
+
+def appointments(owner):
+    results = []
+    sql = """SELECT appointments.*
+                FROM appointments
+                INNER JOIN animals.ON animals.id = appointments.animal_id
+                INNER JOIN owners ON appointments.id = appointments.owner_id
+                WHERE owners.id = %s"""
+    values = [user.id]
+    sql_results = run_sql(sql, values)
+    for row in sql_results:
+        location = Location(row['name'], row['category'], row['id'])
+        results.append(location)
+    return results
