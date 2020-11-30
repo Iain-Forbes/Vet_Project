@@ -58,8 +58,8 @@ def update_animal(id):
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
     owner  = owner_repository.select(request.form["owner_id"])
-    new_animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner, id)
-    animal_repository.update(new_animal)
+    animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner, id)
+    animal_repository.update(animal)
     return redirect("/animals")
 
 

@@ -62,13 +62,13 @@ def update_appointment(id):
     appointment_date = request.form["appointment_date"]
     animal = animal_repository.select(request.form["animal_id"])
     owner  = owner_repository.select(request.form["owner_id"])
-    new_appointment = Appointment(
+    appointment = Appointment(
         appointment_time, 
         appointment_date, 
         owner, 
         animal
         )
-    appointment_repository.update(new_appointment)
+    appointment_repository.update(appointment )
     return redirect("/appointments")
 
 

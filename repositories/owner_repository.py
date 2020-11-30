@@ -44,7 +44,7 @@ def delete(id):
     run_sql(sql, vaules)
 
 def update(owner):
-    sql = "UDPATE owners SET (name, address) = (%s, %s, %s) WHERE id %s"
+    sql = "UPDATE owners SET (name, address) = (%s, %s, %s) WHERE id %s"
     values = [owner.name, owner.address, owner.id]
     run_sql(sql, values)
 
