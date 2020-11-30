@@ -4,9 +4,15 @@
   <div>
     <p>Name: {{ owner.name }}</p>
     <hr>
-    <p>Address:{{ owner.address }}</p>
-    <p>{{ owner.id }}</p>
-    <p>Registered Animals: {{owned_animals }}</p>
+    <p>Address: {{ owner.address }}</p>
+    
+    
+    {% for owned_animal in owned_animals %}
+  
+    <p>Registered Animals: {{ owned_animal.name }}</p>
+    {% endfor %}
+    <br>
+    <p>ID: {{ owner.id }}</p>
     <p><a href="/owners/{{ owner.id }}/edit">Edit</a></p>
   </div>
 

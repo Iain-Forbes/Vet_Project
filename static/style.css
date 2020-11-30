@@ -103,12 +103,11 @@
   } 
 
 section{
-  margin: auto;
-    margin-top: 60;
+    padding-top: 200;
+    margin: auto;
     width: 500px;
     border: 1px groove black;
     display: grid flex;
-    position: relative;
     text-align: center;
     flex-flow: wrap row;
     justify-content: center;

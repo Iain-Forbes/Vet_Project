@@ -24,45 +24,52 @@ def new_appointment():
     return render_template("appointments/new.html", owners=owners, animals=animals)
     return render_template("appointments/new.html")
 
+#Show Appointments
 @appointments_blueprint.route("/appointments/<id>")
 def show_appointments(id):
     owner_appointment = appointment_repository.all_appointments(id)
     appointment = appointment_repository.select(id)
     return render_template("appointments/show.html", appointment=appointment, owner_appointment=owner_appointment)
 
+#Make Appointments
 @appointments_blueprint.route("/appointments", methods=["POST"])
 def create_appointment():
     appointment_time = request.form["appointment_time"]
     appointment_date = request.form["appointment_date"]
     owner  = owner_repository.select(request.form["owner_id"])
     animal = animal_repository.select(request.form["animal_id"])
-    new_appointment = Appointment(appointment_time, appointment_date, 
-    owner, 
-    animal)
+    new_appointment = Appointment(
+        appointment_time, 
+        appointment_date, 
+        owner, 
+        animal)
     appointment_repository.save(new_appointment)
     return redirect("/appointments")
 
 
-
+#Edit Appointments
 @appointments_blueprint.route("/appointments/<id>/edit")
 def edit_appointment(id):
     appointment = appointment_repository.select(id)
     return render_template("appointments/edit.html", appointment=appointment)
 
-
+#Update Appointments
 @appointments_blueprint.route("/appointments/<id>", methods=["POST"])
 def update_appointment(id):
     appointment_time = request.form  ["appointment_time"]
     appointment_date = request.form["appointment_date"]
     owner  = owner_repository.select(request.form["owner_id"])
     animal = animal_repository.select(request.form["animal_id"])
-    new_appointment = Appointment(appointment_time, appointment_date, 
-    owner, 
-    animal)
+    new_appointment = Appointment(
+        appointment_time, 
+        appointment_date, 
+        owner, 
+        animal)
     appointment_repository.update(owner)
     return redirect("/appointments")
 
 
+#Delete Appointments
 @appointments_blueprint.route("/appointments/<id>/delete", methods=["POST"])
 def delete_appointment(id):
     appointment_repository.delete(id)

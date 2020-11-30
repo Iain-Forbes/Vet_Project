@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<section>
   <div>
     <p>Name: {{ animal.name }}</p>
     <hr>
@@ -9,5 +9,5 @@
     <p>Treatment Notes:{{ animal.treatment_notes }}</p>
     <p><a href="/animals/{{animal.id}}/edit">Edit</a></p>
   </div>
-
+</section>
 {% endblock %}
