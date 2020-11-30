@@ -50,7 +50,7 @@ def update_owner(id):
     name = request.form["name"]
     address = request.form["address"]
     new_owner = Owner(name, address, id)
-    owner_repository.update(owner)
+    owner_repository.update(new_owner)
     return redirect("/owners")
 
 #Delete Owners
