@@ -5,27 +5,30 @@
 
   <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="name" required autofocus>
+    <input type="text" id="name" name="name" value= "{{animals.name}}" required autofocus>
   </div>
 
   <div>
     <label for="date_of_birth">Date of Birth:</label>
-    <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth" required autofocus>
+    <input type="date" id="date_of_birth" name="date_of_birth" value= "{{animals.date_of_birth}}" required autofocus>
   </div>
 
   <div>
     <label for="animal_type">Animal Type:</label>
-    <input type="text" id="animal_type" name="animal_type" placeholder="Animal Type" required>
+    <input type="text" id="animal_type" name="animal_type" value= "{{animals.animal_type}}" required>
   </div>
 
   <div>
     <label for="treatment_notes">Treatment Notes:</label>
-    <input type="textarea " id="treatment_notes" name="treatment_notes"
-    placeholder="TreatmentNotes" required>
+    <input type="textarea" id="treatment_notes" name="treatment_notes"
+    vaule= "{{ animals.treatment_notes }}" required>
   </div>
 
+  <div>
+    <button type="submit">Edit Animal Details</button>
+  </div> 
 
-  <button type="submit">Edit Animal Details</button>
+  
 
 </form> 
 <section>

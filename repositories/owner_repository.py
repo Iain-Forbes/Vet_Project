@@ -45,7 +45,10 @@ def delete(id):
 
 def update(owner):
     sql = "UPDATE owners SET (name, address) = (%s, %s) WHERE id = %s"
-    values = [owner.name, owner.address, owner.id]
+    values = [
+        owner.name, 
+        owner.address, 
+        owner.id]
     run_sql(sql, values)
 
 # def appointments(owner):

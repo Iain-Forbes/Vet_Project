@@ -2,32 +2,20 @@
 {% block content %}
 <section>
 
-<form action="/appointments/ {{appointment.id }}" method="POST">
+<form action="/appointments/{{appointment.id }}" method="POST">
 
   <div>
     <label for="appointment_time">Appointment Time:</label>
-    <input type="datetime" id="appointment_time" name="appointment_time" placeholder="Enter Time" required autofocus>
+    <input type="datetime" id="appointment_time" name="appointment_time" value= "{{ appointment.appointment_time }}" required autofocus>
   </div>
 
   <div>
     <label for="appointment_date">Appointment Date:</label>
-    <input type="date" id="appointment_date" name="appointment_date" placeholder="Enter Date" required autofocus>
+    <input type="date" id="appointment_date" name="appointment_date" value="{{ appointment.appointment_date }}" required autofocus>
   </div>
 
-  <div>
-    <label for="animal">Animal:</label>
-    <select name="animal_id" id="animal">
-      {% for animal in animals %}
-      <option value="{{ animal.id }}" >
-        {{ animal.name }}
-      </option>
-      {% endfor %}
-    </select>
-  </div>
-  <div>
     <button type="submit">Edit Appointment Details</button>
   </div>
-
 
 
 

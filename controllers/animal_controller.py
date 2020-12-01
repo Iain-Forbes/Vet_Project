@@ -47,7 +47,8 @@ def show_animal(id):
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):
     animals = animal_repository.select(id)
-    return render_template('animals/edit.html', animals=animals)
+    owner  = owner_repository.select(id)
+    return render_template('animals/edit.html', animals=animals, owners=owner)
 
 
 # UPDATE
@@ -57,8 +58,14 @@ def update_animal(id):
     date_of_birth = request.form["date_of_birth"]
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
-    owner  = owner_repository.select(request.form["owner_id"])
-    animal = Animal(name, date_of_birth, animal_type, treatment_notes, owner, id)
+    owner  = owner_repository.select(id)
+    animal = Animal(
+        name, 
+        date_of_birth, 
+        animal_type, 
+        treatment_notes, 
+        owner, 
+        id)
     animal_repository.update(animal)
     return redirect("/animals")
 

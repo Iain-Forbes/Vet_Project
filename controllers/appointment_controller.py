@@ -54,15 +54,16 @@ def edit_appointment(id):
 #Update Appointments
 @appointments_blueprint.route("/appointments/<id>", methods=["POST"])
 def update_appointment(id):
-    appointment_time = request.form  ["appointment_time"]
+    appointment_time = request.form["appointment_time"]
     appointment_date = request.form["appointment_date"]
-    animal = animal_repository.select(request.form["animal_id"])
+    animal = animal_repository.select(id)
     appointment = Appointment(
         appointment_time, 
         appointment_date, 
-        animal
+        animal,
+        id
         )
-    appointment_repository.update(appointment )
+    appointment_repository.update(appointment)
     return redirect("/appointments")
 
 
