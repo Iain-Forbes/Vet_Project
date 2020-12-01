@@ -4,29 +4,30 @@
 <br>
 All Registered Animals
 <hr> 
+
 {% for animal in all_animals %}
   
-  <div class = animal_details>
-    <p> Name:  {{ animal.name }} <br> 
-    ID: {{ animal.id }}</p>
+<section>
+  <p> Name:  {{ animal.name }} <br> 
+  ID: {{ animal.id }}</p>
    
-    <div class = input>
-      <form action="/animals/{{ animal.id }}/edit" method="GET">
-        <input type="submit" value="Change Details">
-      </form> 
+  <div class = input>
+    <form action="/animals/{{ animal.id }}/edit" method="GET">
+      <input type="submit" value="Change Details">
+    </form> 
 
-      <form action="animals/{{ animal.id }}" method="GET">
-        <input type="submit" value="Get Details"> 
-      </form> 
+    <form action="animals/{{ animal.id }}" method="GET">
+      <input type="submit" value="Get Details"> 
+    </form> 
 
-      <form action="/animals/{{ animal.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-      </form> 
-      <hr>
-    </div>
+    <form action="/animals/{{ animal.id }}/delete" method="POST">
+      <input type="submit" value="Delete">
+    </form> 
+    <hr>
+    
   </div>
-
-{% endfor %}
 </section>
+{% endfor %}
+
 
 {% endblock %}

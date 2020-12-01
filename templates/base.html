@@ -12,9 +12,9 @@
 <body>
   <header>
     <div class="topnav" id="myTopnav">
-      <a href="/" class="active">Home</a>
-    
-  
+     
+      <a href="/"><img src="{{url_for('static', filename='logo.png')}}" alt="logo" width="50" height="50"> 
+      
       <div class="dropdown">
         <button class="dropbtn">Owners
           <i class="fa fa-caret-down"></i>
@@ -24,7 +24,7 @@
           <a href="/owners/new">Add New Owner</a>
         </div>
       </div>
-
+  
       <div class="dropdown">
         <button class="dropbtn">Animals
           <i class="fa fa-caret-down"></i>
@@ -34,7 +34,7 @@
           <a href="/animals/new">Add New Animal</a>
         </div>
       </div>
-      
+  
       <div class="dropdown">
         <button class="dropbtn">Appointments
           <i class="fa fa-caret-down"></i>

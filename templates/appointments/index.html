@@ -6,8 +6,7 @@ Upcoming Appointments
 <hr> 
 
 {% for appointment in all_appointments %}
-  
-<div class = appointment_details>
+<section>
   <p> Appointment Date: {{ appointment.appointment_date }}
   <BR>
   Owner name: {{ appointment.owner.name }} 
@@ -28,11 +27,10 @@ Upcoming Appointments
     <form action="/appointments/{{ appointment.id }}/delete" method="POST">
       <input type="submit" value="Delete">
     </form> 
-  <hr>
-</div>
-</div>
-
-
-{% endfor %}
+    <hr>
+  </div>
 </section>
+
+{% endfor %}  
+
 {% endblock %}

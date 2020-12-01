@@ -2,10 +2,12 @@
 {% block home %}
 <section id="home">
    
-Welcome to the Vettech Dash Board 
+Welcome to the VetTech Dash Board - For all your Vetting needs.
 <br>
+<img src="{{url_for('static', filename='logo.png')}}" alt="logo" width="100" height="100"> 
 <br>
-For all your Vetting needs.
-
+<p>Current Registered Owners: {{owners|length}}</p>
+<p>Current Registered Pets: {{animals|length}}</p>
+<p>Upcoming Appointments: {{appointments|length}}</p>
 </section>
 {% endblock %}
