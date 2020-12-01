@@ -15,17 +15,6 @@
   </div>
 
   <div>
-    <label for="owner">Owner:</label>
-    <select name="owner_id" id="owner">
-      {% for owner in owners %}
-      <option value="{{ owner.id }}" >
-        {{ owner.name }}
-      </option>
-      {% endfor %}
-    </select>
-  </div>
-
-  <div>
     <label for="animal">Animal:</label>
     <select name="animal_id" id="animal">
       {% for animal in animals %}

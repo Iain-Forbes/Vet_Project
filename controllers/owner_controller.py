@@ -8,14 +8,12 @@ import repositories.appointment_repository as appointment_repository
 owners_blueprint = Blueprint('owner', __name__)
 
 # INDEX
-# GET '/owners
 @owners_blueprint.route("/owners", methods=['GET'])
 def owner():  
     owners = owner_repository.select_all()
     return render_template("owners/index.html", all_owners=owners)
 
-# NEW
-# GET '/owners/new'
+# Add New Owners Page
 @owners_blueprint.route("/owners/new", methods=['GET'])
 def new_owner():
     return render_template("owners/new.html")

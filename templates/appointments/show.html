@@ -9,7 +9,7 @@
     <p>Appointment Time: {{ appointment.appointment_time }}</p>
     <hr>
     <p>Appointment Date: {{ appointment.appointment_date }}</p>   
-    <p>Owner: <a href="{{ '/owners/%s'%appointment.owner.id|urlencode }}">{{ appointment.owner.name }}</a></p>
+    <p>Owner: <a href="{{ '/owners/%s'%appointment.animal.owner.id|urlencode }}">{{ appointment.animal.owner.name }}</a></p>
     <p>Animal: <a href="{{ '/animals/%s'%appointment.animal.id|urlencode }}">{{ appointment.animal.name }}</a></p>
 
     <p><a href="/appointments/{{ appointment.id }}/edit">Edit</a></p>

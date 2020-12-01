@@ -23,7 +23,6 @@ CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     appointment_time VARCHAR, 
     appointment_date VARCHAR,
-    owner_id SERIAL REFERENCES owners(id),
     animal_id SERIAL REFERENCES animals(id)
     
 );
