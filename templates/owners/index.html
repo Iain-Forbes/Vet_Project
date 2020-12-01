@@ -2,14 +2,16 @@
 {% block content %}
 <section>
 <br>
-All Registered Owners
+<h1>Registered Owners</h1>
 <hr> 
 
 {% for owner in all_owners %}
   
 <section>
-  <p> Name:{{ owner.name }} <BR>
-  ID: {{ owner.id }}</p>
+  <p> Owners Name: 
+    {{ owner.name }} <BR>
+  ID: 
+  {{ owner.id }}</p>
   <br> <hr>
   
   <div class = input>

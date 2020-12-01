@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <section id="owners">
-  
+
+  <h1>Owner Details</h1>
   <div class = owner_details>
-    <p>Name: {{ owner.name }}</p>
+    <p>Owners Name: {{ owner.name }}</p>
     <hr>
-    <p>Address: {{ owner.address }}<BR>
+    <p>Home Address: {{ owner.address }}<BR>
     ID: {{ owner.id }}</p>
     
     {% for owned_animal in owned_animals %}
