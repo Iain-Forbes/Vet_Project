@@ -47,7 +47,7 @@ def show_animal(id):
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):
     animals = animal_repository.select(id)
-    return render_template('animals/edit.html')
+    return render_template('animals/edit.html', animals=animals)
 
 
 # UPDATE

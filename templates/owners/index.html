@@ -10,20 +10,27 @@ All Registered Owners
 <section>
   <p> Name:{{ owner.name }} <BR>
   ID: {{ owner.id }}</p>
-  <form action="/owners/{{ owner.id }}/edit" method="GET">
-    <input type="submit" value="Change Details">
-  </form>
-  <form action="owners/{{ owner.id }}" method="GET">
-    <input type="submit" value="Get Details">
-   
-  </form> 
-  <form action="/owners/{{ owner.id }}/delete" method="POST">
+  <br> <hr>
+  
+  <div class = input>
+
+    <form action="/owners/{{ owner.id }}/edit" method="GET">
+     <input type="submit" value="Change Details">
+    </form>
+
+    <form action="owners/{{ owner.id }}" method="GET">
+      <input type="submit" value="Get Details">
+    </form> 
+
+    <form action="/owners/{{ owner.id }}/delete" method="POST">
       <input type="submit" value="Delete">
-  </form> 
+    </form> 
+
   <hr>
-
-
-{% endfor %}
+</div>
 </section>
+{% endfor %}
+
+
 
 {% endblock %}
