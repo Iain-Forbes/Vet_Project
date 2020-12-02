@@ -21,8 +21,9 @@ CREATE TABLE animals (
 
 CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
-    appointment_time VARCHAR, 
-    appointment_date VARCHAR,
+    start_time TIME,
+    end_time TIME,
+    appointment_date DATE,
     animal_id SERIAL REFERENCES animals(id)
     
 );

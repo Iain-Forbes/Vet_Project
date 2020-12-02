@@ -6,10 +6,15 @@
     <hr>
 <form action="/appointments" method="post">
 
-    <div>
-      <label for="appointment_time">Appointment Time:</label>
-      <input type="time" id="appointment_time" name="appointment_time" min="09:00" max="16:00" required autofocus>
-    </div>
+  <div>
+    <label for="start_time">Appointment Start Time:</label>
+    <input type="time" id="start_time" name="start_time" min="09:00" max="16:00" required autofocus>
+  </div>
+
+  <div>
+    <label for="end_time">Appointment End Time:</label>
+    <input type="time" id="end_time" name="end_time" min="09:00" max="16:00" required autofocus>
+  </div>
   
     <div>
       <label for="appointment_date">Appointment Date:</label>

@@ -32,11 +32,13 @@ def show_appointments(id):
 #Make Appointments
 @appointments_blueprint.route("/appointments", methods=["POST"])
 def create_appointment():
-    appointment_time = request.form["appointment_time"]
+    start_time = request.form["start_time"]
+    end_time = request.form["end_time"]
     appointment_date = request.form["appointment_date"]
     animal = animal_repository.select(request.form["animal_id"])
     new_appointment = Appointment(
-        appointment_time, 
+        start_time, 
+        end_time,
         appointment_date, 
         animal)
     appointment_repository.save(new_appointment)
@@ -53,11 +55,13 @@ def edit_appointment(id):
 #Update Appointments
 @appointments_blueprint.route("/appointments/<id>", methods=["POST"])
 def update_appointment(id):
-    appointment_time = request.form["appointment_time"]
+    start_time = request.form["start_time"]
+    end_time = request.form["end_time"]
     appointment_date = request.form["appointment_date"]
     animal = request.form["animal_id"]
     appointment = Appointment(
-        appointment_time, 
+        start_time, 
+        end_time,
         appointment_date, 
         animal,
         id

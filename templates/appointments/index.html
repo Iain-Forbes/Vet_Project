@@ -8,6 +8,8 @@
 {% for appointment in all_appointments %}
 <section>
   <p> Appointment Date: {{ appointment.appointment_date }}
+  <br>
+  Appointment time:{{ appointment.start_time }}
   <BR>
   Owner name: {{ appointment.animal.owner.name }}   <BR>
   Animal name: {{appointment.animal.name}}</p>

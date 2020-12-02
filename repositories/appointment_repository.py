@@ -6,8 +6,9 @@ import repositories.owner_repository as owner_repository
 import repositories.animal_repository as animal_repository
 
 def save(new_appointment):
-    sql = "INSERT INTO appointments (appointment_time, appointment_date, animal_id) VALUES (%s, %s, %s) RETURNING id"
-    values = [new_appointment.appointment_time, new_appointment.appointment_date, new_appointment.animal.id]
+    sql = "INSERT INTO appointments (start_time, end_time, appointment_date, animal_id) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [new_appointment.start_time, 
+    new_appointment.end_time, new_appointment.appointment_date, new_appointment.animal.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     new_appointment.id = id
@@ -22,7 +23,9 @@ def select_all():
         animal = animal_repository.select(result["animal_id"])
         
         appointment = Appointment(
-            result["appointment_time"], result["appointment_date"], 
+            result["start_time"], 
+            result["end_time"],
+            result["appointment_date"], 
             animal, 
             result["id"])
         appointments.append(appointment)
@@ -36,7 +39,8 @@ def select(id):
         
     if result is not None:
         appointment = Appointment(
-        result["appointment_time"], 
+        result["start_time"], 
+        result["end_time"],
         result["appointment_date"], 
         animal, 
         result["id"]) 
@@ -51,9 +55,10 @@ def delete(id):
     run_sql(sql, values)
 
 def update(appointment):
-    sql = "UPDATE appointments SET (appointment_time, appointment_date) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE appointments SET (start_time,end_time, appointment_date) = (%s, %s, %s) WHERE id = %s"
     vaules = [
-        appointment.appointment_time, 
+        appointment.start_time, 
+        appointment.end_time,
         appointment.appointment_date,
         appointment.id] 
     run_sql(sql, vaules)
