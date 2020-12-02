@@ -72,14 +72,12 @@ def display_animals_owned(id):
             WHERE owner_id = %s"""
     vaules = [id]
     results = run_sql(sql, vaules)
-    owner = owner_repository.select(id)
     for result in results:
         animals =  Animal(
         result ["name"],
         result ["date_of_birth"], 
         result ["animal_type"], 
         result ["treatment_notes"], 
-        owner,
         result ["id"])
         owned_animals.append(animals)
     return owned_animals
