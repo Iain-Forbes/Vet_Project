@@ -91,10 +91,10 @@ body{
   
 
 section{
-    margin-top: 200px;
     margin: auto;
+    margin-top: 60px;
     width: 500px;
-    border: 1px groove black;
+    border: 0.5px groove black;
     text-align: center;
     font-size: large;
 }
@@ -111,6 +111,10 @@ grid-template: 15px / 1fr 1fr 1fr;
 
 #home{
   margin-top: 60px
+}
+
+#owners{
+  margin-top: 60px;
 }
 
 footer {
