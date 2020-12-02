@@ -63,3 +63,8 @@ def update(appointment):
         appointment.id] 
     run_sql(sql, vaules)
 
+# def show_appointments(date):
+#     todays_appointments = []
+#     sql = """SELECT start_time, end_time FROM appointments WHERE appointment_date = '%s'"""
+
+

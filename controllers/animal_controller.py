@@ -42,7 +42,6 @@ def show_animal(id):
     return render_template("animals/show.html", animal=animal, owner=owned_animals)
 
 
-
 # EDIT
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):
