@@ -12,9 +12,9 @@
     <p>Type:{{ animal.animal_type }}</p>
     <p>Treatment Notes:{{ animal.treatment_notes }}</p>
     
-    {% for owner in owner %}
-    Owner: <a href="{{ '/owners/%s'%owner.owner.id|urlencode }}">{{ owner.owner.name }}</a>
-    {% endfor %}
+    
+    Owner: <a href="{{ '/owners/%s'%animal.owner.id|urlencode }}">{{ animal.owner.name }}</a>
+   
     
 
     <p><a href="/animals/{{animal.id}}/edit">Edit</a></p>
