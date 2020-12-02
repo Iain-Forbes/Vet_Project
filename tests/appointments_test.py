@@ -10,3 +10,4 @@ class AppointmentTest(unittest.TestCase):
 
     def test_appointment_has_appointment_time(self):
         self.assertEquals(self.appointment1.appointment_date, "22/06/82")
+        
