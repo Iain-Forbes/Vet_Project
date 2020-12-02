@@ -6,7 +6,7 @@
 
   <div>
     <label for="appointment_time">Appointment Time:</label>
-    <input type="datetime" id="appointment_time" name="appointment_time" value= "{{ appointment.appointment_time }}" required autofocus>
+    <input type="time" id="appointment_time" name="appointment_time" min="09:00" max="16:00" value= "{{ appointment.appointment_time }}" required autofocus>
   </div>
 
   <div>
@@ -16,13 +16,13 @@
 
   <div>
     <label for="animal">Animals:</label>
-    <select name="animal_id" id="animal">
+    <select name="animal_id" id="animal" >
        <option value="{{ appointment.animal.id  }}" {% if appointment.animal.id == appointment.animal.id %}
         selected {% endif %}>
         {{ appointment.animal.name }}   
       </option>
-  </select>
-</div>
+    </select>
+  </div>
 
     <button type="submit">Edit Appointment Details</button>
 
