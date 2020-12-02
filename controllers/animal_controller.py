@@ -58,7 +58,7 @@ def update_animal(id):
     date_of_birth = request.form["date_of_birth"]
     animal_type = request.form["animal_type"]
     treatment_notes = request.form["treatment_notes"]
-    owner  = owner_repository.select(id)
+    owner  = request.form["owner_id"]
     animal = Animal(
         name, 
         date_of_birth, 

@@ -25,6 +25,16 @@
   </div>
 
   <div>
+    <label for="owner">Owner:</label>
+    <select name="owner_id" id="owner">
+       <option value="{{ animals.owner.id  }}" {% if animals.owner.id == animals.owner.id %}
+        selected {% endif %}>
+        {{ animals.owner.name }}   
+      </option>
+  </select>
+</div>
+
+  <div>
     <button type="submit">Edit Animal Details</button>
   </div> 
 

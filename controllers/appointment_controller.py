@@ -55,7 +55,7 @@ def edit_appointment(id):
 def update_appointment(id):
     appointment_time = request.form["appointment_time"]
     appointment_date = request.form["appointment_date"]
-    animal = animal_repository.select(request.form["animal_id"])
+    animal = request.form["animal_id"]
     appointment = Appointment(
         appointment_time, 
         appointment_date, 

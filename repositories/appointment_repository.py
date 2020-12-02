@@ -58,12 +58,3 @@ def update(appointment):
         appointment.id] 
     run_sql(sql, vaules)
 
-# def all_appointments(id):  
-#     owner_appointment = []
-#     sql = "SELECT animals.* FROM animals INNER JOIN appointments ON appointments.animal_id = animals.id WHERE appointments.animal_id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
-#     for result in results:
-#         owner = Owner(result["name"], result["address"])
-#         owner_appointment.append(owner)
-#     return owner_appointment

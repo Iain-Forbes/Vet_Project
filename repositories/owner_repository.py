@@ -51,16 +51,3 @@ def update(owner):
         owner.id]
     run_sql(sql, values)
 
-# def appointments(owner):
-#     results = []
-#     sql = """SELECT appointments.*
-#                 FROM appointments
-#                 INNER JOIN animals.ON animals.id = appointments.animal_id
-#                 INNER JOIN owners ON appointments.id = appointments.owner_id
-#                 WHERE owners.id = %s"""
-#     values = [owner.id]
-#     sql_results = run_sql(sql, values)
-#     for row in sql_results:
-#         owner = Owner(row['name'], row['address'], row['id'])
-#         results.append(owner)
-#     return results
