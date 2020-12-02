@@ -26,7 +26,6 @@ def new_appointment():
 #Show Appointments
 @appointments_blueprint.route("/appointments/<id>")
 def show_appointments(id):
-    owner_appointment = appointment_repository.all_appointments(id)
     appointment = appointment_repository.select(id)
     return render_template("appointments/show.html", appointment=appointment)
 
@@ -56,7 +55,7 @@ def edit_appointment(id):
 def update_appointment(id):
     appointment_time = request.form["appointment_time"]
     appointment_date = request.form["appointment_date"]
-    animal = animal_repository.select(id)
+    animal = animal_repository.select(request.form["animal_id"])
     appointment = Appointment(
         appointment_time, 
         appointment_date, 

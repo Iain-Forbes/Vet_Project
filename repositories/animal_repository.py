@@ -31,18 +31,17 @@ def select_all():
     return animals
 
 def select(id):
-    sql ="SELECT * FROM animals where id = %s"
+    sql ="SELECT * FROM animals WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-   
+    owner =  owner_repository.select(result["owner_id"])
 
     if result is not None:
-        owner = owner_repository.select(result["owner_id"])
         animal =  Animal(
         result["name"], 
-        result ["date_of_birth"], 
-        result ["animal_type"], 
-        result ["treatment_notes"], 
+        result["date_of_birth"], 
+        result["animal_type"], 
+        result["treatment_notes"], 
         owner,
         result["id"]) 
     return animal 

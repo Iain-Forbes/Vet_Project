@@ -23,7 +23,7 @@ def select_all():
     return owners
 
 def select(id):
-    sql ="SELECT * FROM owners where id = %s"
+    sql ="SELECT * FROM owners WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
    
